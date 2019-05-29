@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="est.css">
+</head>
+
+<body class="home">
+    <div class="texto">
+        <select id="vinho">
+            <option value="">Selecione um tipo de vinho</option>
+            <option value="chardonnay">Chardonnay</option>
+            <option value="merlot">Merlot</option>
+            <option value="cabernet_sauvignon">Cabernet Sauvignon</option>
+            <option value="chianti">Chianti</option>
+            <option value="sauvignon_blanc">Sauvignon Blanc</option>
+            <option value="riesling">Riesling</option>
+            <option value="pinot_grigio">Pinot Grigio</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="ver_combinação()">Ver combinação</button>
+        <div id="div_msg"></div>
+        <br>
+        <img src="" id="imagemt">
+    </div>
+</body>
+
+</html>
+<script>
+    function ver_combinação() {
+        var imagem;
+        var queijo;
+        var vinho_esc;
+
+
+        if (vinho.value == "") {
+            alert('Selecione um tipo de vinho!')
+            div_msg.innerHTML = ``;
+            imagemt.src = ``;
+        }
+        else {
+            if (vinho.value == "chardonnay") {
+                imagem = "imagens/brie.jpg";
+                queijo = "brie";
+                vinho_esc = `Chardonnay`
+            }
+            else if (vinho.value == "merlot") {
+                imagem = "imagens/2gouda.jpg";
+                queijo = "gouda";
+                vinho_esc = `Merlot`
+            }
+            else if (vinho.value == "cabernet_sauvignon") {
+                imagem = "imagens/3cheddar.jpg";
+                queijo = "cheddar";
+                vinho_esc = `Cabernet Sauvignon`
+            }
+            else if (vinho.value == "chianti") {
+                imagem = "imagens/parmesao.jpg";
+                queijo = "parmesão";
+                vinho_esc = `Chianti`
+            }
+            else if (vinho.value == "sauvignon_blanc") {
+                imagem = "imagens/gruyere.jpg";
+                queijo = "gruyere";
+                vinho_esc = `Sauvignon Blanc`
+            }
+            else if (vinho.value == "riesling") {
+                imagem = "imagens/roquefort.jpg";
+                queijo = "roquefort";
+                vinho_esc = `Riesling`
+            }
+            else if (vinho.value == "pinot_grigio") {
+                imagem = "imagens/ricota.jpg";
+                queijo = "ricota";
+                vinho_esc = `Pinot Grigio`
+            }
+            div_msg.innerHTML = `o queijo que orna melhor com o vinho ${vinho_esc} é o ${queijo}`;
+            imagemt.src = `${imagem}`;
+        }
+    }
+</script>
